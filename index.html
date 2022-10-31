@@ -1,10 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<title>Nimrodsun's - Full Screen Apps</title>
 <head>
-    <meta charset="UTF-8">
-    <title>My first page</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Appzi: Capture Insightful Feedback -->
+    <script async src="https://w.appzi.io/bootstrap/bundle.js?token=banFK"></script>
+    <!-- End Appzi -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156581969-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-156581969-1');
+    </script>
+    <link rel="stylesheet" href="c.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+
+        .navbar {
+            width: 100%;
+            background-color: #000;
+            overflow: auto;
+            flex-wrap: nowrap;
+        }
+
+        .navbar a {
+            float: left;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 27px;
+            text-align: center;
+        }
+
+        .active {
+            background-color: #222;
+        }
+    </style>
 </head>
 <body>
-Hello, world.
+
+<div class="navbar">
+    <a  class="active" href="/index.php?s=h"><i class="fa fa-fw fa-home"></i> </a>
+    <a  href="/users/join.php"><i class="fa fa-fw fa-gamepad"></i> </a>
+    <a  href="/users/join.php"><i class="fa fa-fw fa-music"></i> </a>
+    <a  href="/users/join.php"><i class="fa fa-fw fa-globe"></i> </a>
+</div>
+
+<div>
+    <!--DEFAULT VIEW-->
+    <a href="https://netflix.com/">
+        <figure onMouseUp="return showLoader()">
+            <img src="netflix.jpg">
+        </figure>
+    </a>
+    <a href="http://www.twitch.com">
+        <figure onMouseUp="return showLoader()">
+            <img src="twitch.gif">
+        </figure>
+    </a>
+    <a href="https://www.paramountplus.com/">
+        <figure onMouseUp="return showLoader()">
+            <img src="paramount+.gif">
+        </figure>
+    </a>
+    <a href="http://www.youtube.com">
+        <figure onMouseUp="return showLoader()">
+            <img src="youtube.jpg">
+        </figure>
+    </a>
+    <a href="http://www.disneyplus.com">
+        <figure onMouseUp="return showLoader()">
+            <img src="disney.jpg">
+        </figure>
+    </a>
+    <a href="https://abetterrouteplanner.com/">
+        <figure onMouseUp="return showLoader()">
+            <img width="100%" src="abrp.gif">
+        </figure>
+    </a>
+    <a onClick="showOverlay()">
+        <figure>
+            <img width="100%" src="chromium.jpg">
+        </figure>
+    </a>
+    <a href="http://maps.google.com">
+        <figure onMouseUp="return showLoader()">
+            <img width="100%" src="google_maps.gif">
+        </figure>
+    </a>
+</div>
+<div id="overlay" onClick="hide('overlay')">
+    <input type="text" id="path" value="http://" onClick="window.event.stopPropagation();">
+</div>
+
+<div id="overlayfullscreen">
+    <h2 id="fullscreen" ><span class="txt"><p onMouseDown="goFullScreenYoutube()">Redirecting... once loaded click <font color="#2793E6">GO TO SITE</font></p></span></h2>
+    <h3 id="fullscreen" ><span class="txt"><p><input type="checkbox" onClick="document.cookie='noshow';">Don't show this again.</p></span></h2>
+</div>
+
+<div id="overlayfull" style="display:none;">
+    <center><button class="button-basic" onMouseDown="goFullScreen();">GO FULLSCREEN</button></center>
+</div>
+
+<div id="loader">
+    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <h2 style="color: black;">Please wait...</h2>
+</div>
+
+<script type="text/javascript" src="j2.js"></script>
+
 </body>
 </html>
