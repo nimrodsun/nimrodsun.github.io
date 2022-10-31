@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <title>Nimrodsun's - Full Screen Apps</title>
 <head>
 
@@ -43,73 +43,70 @@
             background-color: #222;
         }
     </style>
+    <title></title>
 </head>
 <body>
 
 <div class="navbar">
-    <a  class="active" href="/index.php?s=h"><i class="fa fa-fw fa-home"></i> </a>
+    <a  class="active" href="/index.html"><i class="fa fa-fw fa-home"></i> </a>
 </div>
 
 <div>
     <!--DEFAULT VIEW-->
     <a href="https://netflix.com/">
         <figure onMouseUp="return showLoader()">
-            <img src="Images/netflix.jpg">
+            <img src="Images/netflix.jpg" alt="Netflix">
         </figure>
     </a>
     <a href="http://www.twitch.com">
         <figure onMouseUp="return showLoader()">
-            <img src="Images/twitch.gif">
+            <img src="Images/twitch.gif" alt="Twitch">
         </figure>
     </a>
     <a href="https://www.paramountplus.com/">
         <figure onMouseUp="return showLoader()">
-            <img src="Images/paramount+.gif">
+            <img src="Images/paramount+.gif" alt="Paramount Plus">
         </figure>
     </a>
     <a href="http://www.youtube.com">
         <figure onMouseUp="return showLoader()">
-            <img src="Images/youtube.jpg">
+            <img src="Images/youtube.jpg" alt="Youtube">
         </figure>
     </a>
     <a href="http://www.disneyplus.com">
         <figure onMouseUp="return showLoader()">
-            <img src="Images/disney.jpg">
+            <img src="Images/disney.jpg" alt="DisneyPlus">
         </figure>
     </a>
     <a href="https://tv.apple.com/">
         <figure onMouseUp="return showLoader()">
-            <img src="Images/apple_tv_plus.jpg">
+            <img src="Images/apple_tv_plus.jpg" alt="Apple TV +">
         </figure>
     </a>
     <a href="https://www.amazon.co.uk/gp/video/storefront/ref=atv_hm_ftm_c_9zZ8D2_1_2?clientFilter=on">
         <figure onMouseUp="return showLoader()">
-            <img src="Images/amazon@2x.png">
+            <img src="Images/amazon@2x.png" alt="Amazon Prime Video">
         </figure>
     </a>
     <a href="https://abetterrouteplanner.com/">
         <figure onMouseUp="return showLoader()">
-            <img width="100%" src="Images/abrp.gif">
+            <img width="100%" src="Images/abrp.gif" alt="A Better Route Planner">
         </figure>
     </a>
     <a onClick="showOverlay()">
         <figure>
-            <img width="100%" src="Images/chromium.jpg">
+            <img width="100%" src="Images/chromium.jpg" alt="Chrome">
         </figure>
     </a>
     <a href="http://maps.google.com">
         <figure onMouseUp="return showLoader()">
-            <img width="100%" src="Images/google_maps.gif">
+            <img width="100%" src="Images/google_maps.gif" alt="Google Maps">
         </figure>
     </a>
-</div>
-<div id="overlay" onClick="hide('overlay')">
-    <input type="text" id="path" value="http://" onClick="window.event.stopPropagation();">
 </div>
 
 <div id="overlayfullscreen">
     <h2 id="fullscreen" ><span class="txt"><p onMouseDown="goFullScreenYoutube()">Redirecting... once loaded click <font color="#2793E6">GO TO SITE</font></p></span></h2>
-    <h3 id="fullscreen" ><span class="txt"><p><input type="checkbox" onClick="document.cookie='noshow';">Don't show this again.</p></span></h2>
 </div>
 
 <div id="overlayfull" style="display:none;">
