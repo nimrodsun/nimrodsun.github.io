@@ -3,120 +3,286 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Invitation</title>
+  <title>Invitation – Alex &amp; [Name]</title>
 
   <style>
+    :root {
+      --bg: #f5f3f0;
+      --card-bg: #ffffff;
+      --text: #222222;
+      --muted: #666666;
+      --accent: #b8865d;
+      --accent-soft: rgba(184, 134, 93, 0.18);
+      --radius-lg: 18px;
+      --shadow-soft: 0 14px 35px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
-                   Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       margin: 0;
-      padding: 0;
-      background: #fafafa;
-      color: #333;
-      line-height: 1.6;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background: radial-gradient(circle at top, #faf7f3 0, var(--bg) 60%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.4rem 1.4rem;
     }
 
-    .container {
-      max-width: 700px;
-      margin: auto;
-      padding: 2rem 1.5rem;
-      background: white;
+    .card {
+      width: 100%;
+      max-width: 720px;
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      padding: 2.6rem 2.4rem 2.4rem;
     }
 
-    h1 {
+    @media (max-width: 600px) {
+      body {
+        padding: 1.6rem 1rem;
+      }
+
+      .card {
+        padding: 2rem 1.6rem 1.8rem;
+      }
+    }
+
+    .masthead {
       text-align: center;
-      margin-bottom: 1rem;
+      padding-bottom: 1.8rem;
+      margin-bottom: 1.8rem;
+      border-bottom: 1px solid var(--accent-soft);
+    }
+
+    .masthead-name {
+      font-size: 0.85rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 0.35rem;
+    }
+
+    .masthead-tagline {
+      font-size: 0.95rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0;
+    }
+
+    main h1 {
+      font-size: 1.65rem;
+      margin: 0 0 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .lede {
+      font-size: 1.03rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .lede strong {
+      font-weight: 600;
+    }
+
+    .meta {
+      font-size: 0.95rem;
+      margin-bottom: 1.6rem;
+      padding: 0.85rem 1rem;
+      border-radius: 12px;
+      background: linear-gradient(
+        to right,
+        rgba(184, 134, 93, 0.08),
+        rgba(184, 134, 93, 0.02)
+      );
+      border: 1px solid var(--accent-soft);
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1rem;
+      align-items: baseline;
+    }
+
+    .meta-label {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .meta-value {
+      font-weight: 500;
+    }
+
+    section {
+      margin-top: 1.8rem;
     }
 
     h2 {
-      margin-top: 2rem;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 0.5rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
+      margin: 0 0 0.6rem;
+      color: var(--muted);
+    }
+
+    h3 {
+      font-size: 0.98rem;
+      margin: 1.2rem 0 0.4rem;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0 0 0.9rem;
+      font-size: 0.98rem;
     }
 
     ul {
-      padding-left: 1.2rem;
+      margin: 0.2rem 0 0.9rem 1.1rem;
+      padding: 0;
+      font-size: 0.96rem;
     }
 
-    strong {
+    li + li {
+      margin-top: 0.2rem;
+    }
+
+    .footer-note {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      border-top: 1px dashed rgba(0, 0, 0, 0.08);
+      padding-top: 1rem;
+    }
+
+    .footer-note strong {
       font-weight: 600;
     }
 
     @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #050506;
+        --card-bg: #111216;
+        --text: #f5f5f5;
+        --muted: #aaaaaa;
+        --accent-soft: rgba(184, 134, 93, 0.3);
+        --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.7);
+      }
       body {
-        background: #111;
-        color: #ddd;
+        background: radial-gradient(circle at top, #181820 0, #050506 60%);
       }
-      .container {
-        background: #1a1a1a;
+      .card {
+        border-color: rgba(255, 255, 255, 0.03);
       }
-      h2 {
-        border-bottom-color: #333;
+      .footer-note {
+        border-top-color: rgba(255, 255, 255, 0.08);
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Invitation</h1>
+  <article class="card">
+    <header class="masthead">
+      <!-- Your personal “letterhead” – change once, reuse forever -->
+      <p class="masthead-name">Alex &amp; [Partner Name]</p>
+      <p class="masthead-tagline">At Home in Hitchin</p>
+    </header>
 
-    <p><strong>Hello lovely people!</strong></p>
+    <main>
+      <!-- Page-specific title -->
+      <h1>Invitation</h1>
 
-    <p>We’d love to have you over to our new place this 
-    <strong>Saturday, 29th November</strong>, starting from <strong>16:00</strong> 
-    and running until about <strong>22:30–23:00</strong>.</p>
+      <!-- Opening paragraph -->
+      <p class="lede">
+        <strong>Hello lovely people!</strong> We’d love to have you over to our new place this
+        <strong>Saturday, 29th November</strong>, starting from <strong>16:00</strong> and
+        running until about <strong>22:30–23:00</strong>.
+      </p>
 
-    <p>One small logistical wrinkle we only realised a bit late: there are planned engineering works this weekend.  
-    The easiest route is to take the <strong>direct train from King’s Cross to Hitchin</strong>.  
-    We’re happy to <strong>pick you up from Hitchin Station</strong>, and we’ll help arrange a 
-    <strong>taxi back to the station</strong> when you head home in the evening.</p>
+      <!-- Structured meta block for key info (date / time / location) -->
+      <div class="meta">
+        <div class="meta-row">
+          <span class="meta-label">When</span>
+          <span class="meta-value">Saturday, 29th November · 16:00 to ~23:00</span>
+        </div>
+        <div class="meta-row" style="margin-top: 0.3rem;">
+          <span class="meta-label">Where</span>
+          <span class="meta-value">Our new place (with pick-up from Hitchin Station)</span>
+        </div>
+        <div class="meta-row" style="margin-top: 0.3rem;">
+          <span class="meta-label">Travel</span>
+          <span class="meta-value">Direct train from King’s Cross → Hitchin; we’ll handle station pick-up &amp; evening taxis.</span>
+        </div>
+      </div>
 
-    <h2>Food & Drink Plan</h2>
+      <p>
+        One small logistical wrinkle we only realised a bit late: there are planned engineering works this weekend. The easiest route is to take the
+        <strong>direct train from King’s Cross to Hitchin</strong>. We’re happy to <strong>pick you up from Hitchin Station</strong>, and we’ll help
+        arrange a <strong>taxi back to the station</strong> when you head home in the evening.
+      </p>
 
-    <h3>On arrival</h3>
-    <ul>
-      <li>Nibbles</li>
-      <li><strong>Vegan tea sandwiches</strong> (three varieties) + crisps</li>
-    </ul>
+      <section>
+        <h2>Food &amp; Drink</h2>
 
-    <h3>Drinks</h3>
-    <ul>
-      <li>Red wine</li>
-      <li>White wine</li>
-      <li>Mulled wine</li>
-      <li>Peroni</li>
-      <li>Cocktails (TBD or made on request)</li>
-      <li>Juices, ginger beer, Coke, lemonade</li>
-    </ul>
+        <h3>On arrival</h3>
+        <ul>
+          <li>Nibbles</li>
+          <li><strong>Vegan tea sandwiches</strong> (three varieties) + crisps</li>
+        </ul>
 
-    <h3>Dinner</h3>
-    <ul>
-      <li>Lentil “meat” loaf</li>
-      <li>Roasted pumpkin/squash with mixed grains</li>
-      <li>Roasted chicken</li>
-    </ul>
+        <h3>Drinks</h3>
+        <ul>
+          <li>Red wine</li>
+          <li>White wine</li>
+          <li>Mulled wine</li>
+          <li>Peroni</li>
+          <li>Cocktails (TBD or made on request)</li>
+          <li>Juices, ginger beer, Coke, lemonade</li>
+        </ul>
 
-    <h3>Sides</h3>
-    <ul>
-      <li>Mashed potato</li>
-      <li>Roasted carrots & green beans</li>
-    </ul>
+        <h3>Dinner</h3>
+        <ul>
+          <li>Lentil “meat” loaf</li>
+          <li>Roasted pumpkin/squash with mixed grains</li>
+          <li>Roasted chicken</li>
+        </ul>
 
-    <h3>Sauces</h3>
-    <ul>
-      <li>Gravy (vegan & non-vegan)</li>
-      <li>Cranberry sauce</li>
-    </ul>
+        <h3>Sides</h3>
+        <ul>
+          <li>Mashed potato</li>
+          <li>Roasted carrots &amp; green beans</li>
+        </ul>
 
-    <h3>Dessert</h3>
-    <ul>
-      <li>Turon with ube ice cream</li>
-      <li>Cheese & crackers (vegan & non-vegan options)</li>
-    </ul>
+        <h3>Sauces</h3>
+        <ul>
+          <li>Gravy (vegan &amp; non-vegan)</li>
+          <li>Cranberry sauce</li>
+        </ul>
 
-    <p>Let us know if you need anything at all or have any dietary requests.<br>
-    Looking forward to having you over and showing you the new place!</p>
-  </div>
+        <h3>Dessert</h3>
+        <ul>
+          <li>Turon with ube ice cream</li>
+          <li>Cheese &amp; crackers (vegan &amp; non-vegan options)</li>
+        </ul>
+      </section>
+
+      <p class="footer-note">
+        Let us know if you need anything at all or have any dietary requests.<br />
+        <strong>We’re really looking forward to having you over and showing you the new place.</strong>
+      </p>
+    </main>
+  </article>
 </body>
 </html>
